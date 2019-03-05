@@ -39,5 +39,5 @@ Will produce the same numbers.
 The C Programming Language has two function **rand()**, **srand()** then used for randomization.
 
 - time
-- /dev/random
+- /dev/random, /dev/urandom
 - ...
