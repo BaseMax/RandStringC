@@ -18,5 +18,17 @@
 #include <time.h>
 
 char *randString1(int length) {
-  
+    char *string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    size_t string_length = 62;
+    char *result = malloc(sizeof(char) * (length +1));
+    if(!result) {
+        return (char*)0;
+    }
+    unsigned int key = 0;
+    for(int index = 0;index<length;index++) {
+        key = rand() % string_length;
+        result[index] = string[key];
+    }
+    result[length] = '\0';
+    return result;
 }
