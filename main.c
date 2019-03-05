@@ -32,3 +32,16 @@ char *randString1(int length) {
     result[length] = '\0';
     return result;
 }
+char *randString2(char *result,size_t length,size_t charLimit)
+{
+    char *string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    if (length) {
+        --length;
+        for (size_t index = 0;index<length;index++) {
+            int key = rand() % (int) (charLimit);
+            result[index] = string[key];
+        }
+        result[length] = '\0';
+    }
+    return result;
+}
