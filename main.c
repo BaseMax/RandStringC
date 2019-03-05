@@ -64,3 +64,15 @@ void randString3(char *result)
 		strcpy(result,temp);
 	}
 }
+
+int main()
+{
+	char *str;
+	str=randString1(25);
+	printf("==>%s\n",str);
+	randString2(str,25,7);
+	printf("==>%s\n",str);
+	randString3(str);
+	printf("==>%s\n",str);
+	return 0;
+}
