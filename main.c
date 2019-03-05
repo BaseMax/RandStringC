@@ -10,40 +10,40 @@
 **/
 #include <unistd.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+// #include <sys/types.h>
+// #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
 
 char *randString1(int length) {
-    char *string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    size_t string_length = 62;
-    char *result = malloc(sizeof(char) * (length +1));
-    if(!result) {
-        return (char*)0;
-    }
-    unsigned int key = 0;
-    for(int index = 0;index<length;index++) {
-        key = rand() % string_length;
-        result[index] = string[key];
-    }
-    result[length] = '\0';
-    return result;
+	char *string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	size_t string_length = 62;
+	char *result = malloc(sizeof(char) * (length +1));
+	if(!result) {
+		return (char*)0;
+	}
+	unsigned int key = 0;
+	for(int index = 0;index<length;index++) {
+		key = rand() % string_length;
+		result[index] = string[key];
+	}
+	result[length] = '\0';
+	return result;
 }
 char *randString2(char *result,size_t length,size_t charLimit)
 {
-    char *string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    if (length) {
-        --length;
-        for (size_t index = 0;index<length;index++) {
-            int key = rand() % (int) (charLimit);
-            result[index] = string[key];
-        }
-        result[length] = '\0';
-    }
-    return result;
+	char *string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	if (length) {
+		--length;
+		for (size_t index = 0;index<length;index++) {
+			int key = rand() % (int) (charLimit);
+			result[index] = string[key];
+		}
+		result[length] = '\0';
+	}
+	return result;
 }
 void randString3(char *result)
 {
@@ -64,10 +64,9 @@ void randString3(char *result)
 		strcpy(result,temp);
 	}
 }
-
 int main()
 {
-	char *str;
+	char* str;
 	str=randString1(25);
 	printf("==>%s\n",str);
 	randString2(str,25,7);
