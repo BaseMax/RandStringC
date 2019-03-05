@@ -2,7 +2,7 @@
 
 Tiny program for generate random characters using C
 
-### Output
+## Output
 
 ```
 ==>9NI3Ex1EkuPgQPrggzJPXueYy
@@ -10,7 +10,7 @@ Tiny program for generate random characters using C
 ==>�6��jϨ"���d~����|�)Ҍ��?��
 ```
 
-### Ways
+## Ways
 
 The C Programming Language has two function **rand()**, **srand()** then used for randomization.
 
