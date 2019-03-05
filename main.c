@@ -45,3 +45,22 @@ char *randString2(char *result,size_t length,size_t charLimit)
     }
     return result;
 }
+void randString3(char *result)
+{
+	int random = open("/dev/random", O_RDONLY);
+	if(random >= 0)
+	{
+		char temp[30];
+		size_t length = 0;
+		while(length < sizeof temp)
+		{
+			ssize_t result = read(random, temp + length, (sizeof temp) - length);
+			if(result >= 0)
+			{
+				length += result;
+			}
+		}
+		close(random);
+		strcpy(result,temp);
+	}
+}
