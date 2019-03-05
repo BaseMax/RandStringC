@@ -4,7 +4,8 @@ Tiny program for generate random characters using C
 
 # Ways
 
-- rand(), srand()
+The C Programming Language has two function **rand()**, **srand()** then used for randomization.
+
 - time
 - /dev/random
 - ...
