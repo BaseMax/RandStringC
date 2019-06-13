@@ -17,9 +17,10 @@
 #include <string.h>
 #include <time.h>
 
+const char *string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 char *randString1(int length) {
-	char *string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	size_t string_length = 62;
+	const size_t string_length = 62;
 	char *result = malloc(sizeof(char) * (length +1));
 	if(!result) {
 		return (char*)0;
@@ -34,7 +35,6 @@ char *randString1(int length) {
 }
 char *randString2(char *result,size_t length,size_t charLimit)
 {
-	char *string = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	if (length) {
 		--length;
 		for (size_t index = 0;index<length;index++) {
